@@ -23,19 +23,6 @@
     I am working toward stability as quickly as possible, but be warned that future release may introduce incompatibilities or remove this package altogether.
     [Feedback, suggestions, and contributions](contrib.md) are desperately appreciated.
 
-``numerary`` has donated its core caching protocol implementation to (and now depends on) ``beartype``.
-``beartype`` is *awesome*, and its author is even *awesomer*.[^1]
-
-[^1]:
-
-    I acknowledge that the subject of who is awesomer, beartype or the man who made it, is [hotly contested](https://github.com/beartype/beartype/issues/66#issuecomment-960495976).
-
-
-::: numerary._protocol.CachingProtocolMeta
-    rendering:
-      show_if_no_docstring: false
-      show_root_heading: true
-
 ::: numerary.types
     rendering:
       show_if_no_docstring: false
