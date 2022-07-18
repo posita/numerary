@@ -67,7 +67,13 @@ def test_beartype_detection() -> None:
 
 
 def test_beartype_validators() -> None:
-    from beartype.typing import Annotated
+    try:
+        from beartype.typing import Annotated
+    except ImportError:
+        pytest.skip("requires beartype.typing.Annotated")
+
+        raise
+
     from beartype.vale import Is
 
     NonZero = Annotated[IntegralLike, Is[lambda x: x != 0]]

@@ -9,7 +9,7 @@
 from __future__ import annotations
 
 import os
-from typing import Protocol, TypeVar, cast
+from typing import TYPE_CHECKING, TypeVar
 
 __all__ = ("beartype",)
 
@@ -30,13 +30,6 @@ def identity(__: _T) -> _T:
 # ---- Initialization ------------------------------------------------------------------
 
 
-class _DecoratorT(Protocol):
-    def __call__(self, __: _T) -> _T:
-        ...
-
-
-beartype: _DecoratorT = identity
-
 _NUMERARY_BEARTYPE = os.environ.get("NUMERARY_BEARTYPE", "no")
 _truthy = ("on", "t", "true", "yes")
 _falsy = ("off", "f", "false", "no")
@@ -54,7 +47,9 @@ except ValueError:
             f"""unrecognized value ({_NUMERARY_BEARTYPE}) for NUMERARY_BEARTYPE environment variable (should be "{'", "'.join(_truthy + _falsy)}", or an integer)"""
         )
 
-if _use_beartype_internally:
-    import beartype as _beartype
+if not TYPE_CHECKING and _use_beartype_internally:
+    from beartype import beartype as _beartype
 
-    beartype = cast(_DecoratorT, _beartype.beartype)
+    beartype = _beartype
+else:
+    beartype = identity
