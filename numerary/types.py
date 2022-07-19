@@ -26,8 +26,8 @@ from beartype.typing import SupportsIndex as _SupportsIndex
 from beartype.typing import SupportsInt as _SupportsInt
 from beartype.typing import SupportsRound as _SupportsRound
 
-from ._protocol import CachingProtocolMeta
 from .bt import beartype
+from .protocol import CachingProtocolMeta
 
 if TYPE_CHECKING:
     from typing import Protocol

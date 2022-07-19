@@ -238,7 +238,8 @@ More attributes means more comparisons.
 Further, it performs these comparisons … Every. Single. 🤬ing. Time.
 
 Protocols provided by ``numerary`` use instead [``CachingProtocolMeta``](https://posita.github.io/numerary/0.4/numerary.types/#numerary.types.CachingProtocolMeta) as their meta class.
-``CachingProtocolMeta`` derives from ``type(Protocol)`` and overrides ``__instancecheck__ `` to cache results based on instance type.
+``CachingProtocolMeta`` derives from ``type(beartype.typing.Protocol)`` which caches results based on instance type.
+``numerary``’s version allows for runtime check overrides of those results.
 
 Conceptually:
 

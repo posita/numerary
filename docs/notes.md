@@ -33,7 +33,7 @@
 
 * Now relies on ``#!python beartype.typing.Protocol`` as the underlying caching protocol implementation.
   This means that ``beartype`` has emerged as ``numerary``’s sole runtime dependency.
-  (``numerary`` still layers on its own runtime override mechanism via [CachingProtocolMeta][numerary._protocol.CachingProtocolMeta], which derives from ``beartype``’s.)
+  (``numerary`` still layers on its own runtime override mechanism via [CachingProtocolMeta][numerary.protocol.CachingProtocolMeta], which derives from ``beartype``’s.)
   It also means that ``numerary`` loses Python 3.7 support, but that was largely illusory anyway.
 
   This decision was not made lightly.
@@ -77,9 +77,9 @@
 
 ## [0.1.0](https://github.com/posita/numerary/releases/tag/v0.1.0)
 
-* Adds [``CachingProtocolMeta.includes``][numerary._protocol.CachingProtocolMeta.includes],
-  [``CachingProtocolMeta.excludes``][numerary._protocol.CachingProtocolMeta.excludes], and
-  [``CachingProtocolMeta.reset_for``][numerary._protocol.CachingProtocolMeta.reset_for]
+* Adds [``CachingProtocolMeta.includes``][numerary.protocol.CachingProtocolMeta.includes],
+  [``CachingProtocolMeta.excludes``][numerary.protocol.CachingProtocolMeta.excludes], and
+  [``CachingProtocolMeta.reset_for``][numerary.protocol.CachingProtocolMeta.reset_for]
   cache override functions.
 * Retires ``…SCT`` tuples as unnecessary, especially in light of cache overrides.
   (Runtime ``isinstance`` protocol checking is fast enough.)

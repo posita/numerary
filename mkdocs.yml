@@ -16,6 +16,7 @@ nav:
   - License: license.md
   - API:
     - <tt>numerary</tt>: numerary.md
+    - <tt>numerary.protocol</tt>: numerary.protocol.md
     - <tt>numerary.types</tt>: numerary.types.md
 
 # See:
